@@ -27,7 +27,11 @@ Client.on(`message`, msg =>{
         Embed.addField(`Андронный коллайдер`, `2`,);
         msg.channel.send(Embed);
         //console.log(msg.member);
-    }    
+    } 
+    if (msg.content === `lol`)
+    {
+        msg.channel.send("Пау Пау Пау Деда в здании 🦐");
+    }   
 });
 
 Client.login(Token.token);
