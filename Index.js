@@ -1,35 +1,26 @@
 const Discord = require('Discord.js');   
 const Client = new Discord.Client();
-
 const fs = require(`fs`);
 const readFl = fs.readFileSync(`./token.json`);
 const Token = JSON.parse(readFl);
 
 Client.on('ready',() =>{
-    console.log(`Logged in as ${Client.user.tag}!`);
+    console.log(`Logged in as ${Client.user.tag} !`);
 }); 
 
 Client.on(`message`, msg =>{
     if(msg.content === `t`){
-        /* fs.readFile(`./token.json`, `utf8`, (err, jsonString) => {
-    if (err) { 
-        console.log ("File read failed:", err)
-        return
-    }
-    console.log (`File data:`, jsonString)
-    })*/
         const Embed = new Discord.RichEmbed();
-        Embed.setAuthor(Client.user.username);
-        Embed.setImage(`https://newsland.com/static/u/content_image_from_text/22112016/5565400-1126884.jpg`);
-        Embed.setFooter(msg.member.user.username);
-        Embed.setColor(`#ab52d6`);
-        Embed.addField(`Андронный коллайдер 228 1337`, `2`,);
-        Embed.addField(`Андронный коллайдер`, `2`,);
+        Embed.setAuthor(Client.user.username)
+             .setImage(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeGHgSKE_p8DfMNg0iIFFmw-fURlrYxrzqAk-X5iXAn2LTftFw`)
+             .setFooter(msg.member.user.username)
+             .setColor(`#ab52d6`)
+             .addField(`Андронный коллайдер 228 1337`, `2`,)
+             .addField(`Андронный коллайдер`, `2`,)
         msg.channel.send(Embed);
-        //console.log(msg.member);
     } 
-    if (msg.content === `lol`)
-    {
+    
+    if (msg.content === `lol`){
         msg.channel.send("Пау Пау Пау Деда в здании 🦐");
     }   
 });
